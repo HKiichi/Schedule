@@ -1,0 +1,49 @@
+
+<html lang="en">
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<app-header></app-header>
+<div class="container"></div>
+<head ></head>
+<div class="container main">
+  <div class="row">
+    <div class="col-md-6">
+      <form method="post">
+        <div class="form-group" >
+          <label for="transferFrom">Please select the date From:</label>
+          <select class="form-control"  name="transferFrom" id="transferFrom" required="required">
+            <option  disabled="disabled" selected="selected"> -- select your account -- </option>
+            <option value="Primary">Date</option>
+            <option value="Savings">Date</option>
+          </select>
+          <br />
+        </div>
+
+        <div class="form-group" >
+          <label for="transferTo">Please select your name </label>
+          <select class="form-control"  name="transferTo" id="transferTo" required="required">
+            <option  disabled="disabled" selected="selected"> -- select your account -- </option>
+            <option value="Primary">Primary</option>
+            <option value="Savings">Savings</option>
+          </select>
+          <br />
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" name="available" id="available" />&nbsp;<span class="clean-font">Available</span>
+        </div>
+
+        <input type="hidden"
+               name="${_csrf.parameterName}"
+               value="${_csrf.token}"/>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      </form>
+
+      <div class="col-md-6">
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

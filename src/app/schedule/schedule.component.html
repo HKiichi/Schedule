@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class = "row">
+    <div class = "col-xs-10">
+    <h2>Schedule</h2>
+    <div class="panel panel-default">
+      <table class = "table table-striped">
+        <thead>
+        <th>Game Season</th>
+        </thead>
+        <tr>
+          <th>Date</th>
+          <td *ngFor="let shift of shifts"> {{shift.datum}}{{shift.time}}</td>
+          <tr>
+          <th>Time</th>
+          </tr>
+        <tr *ngFor="let person of persons">{{person.person}}
+          <td ></td>
+          <!--<th> {{available.name}}</th>
+          //<td> <input type ="checkbox" readonly [checked]="available.availables === 'true'"> </td>
+          <td> <input type ="checkbox" readonly [checked]="available.availables === 'false'"> </td>
+          <td> <input type ="checkbox" readonly [checked]="available.availables === 'true'"> </td> -->
+
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+

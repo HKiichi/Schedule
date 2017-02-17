@@ -1,0 +1,42 @@
+
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]= "shiftForm" (ngSubmit)="storesData()">
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input
+              type="text"
+              id="date"
+              class="form-control"
+              formControlName="date">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <label for="time">Time</label>
+          <textarea
+            type="text"
+            id="time"
+            row="6"
+            class="form-control"
+            formControlName="time"></textarea>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+          <a class="btn btn-danger" (click)="onCancel()">Cancel</a>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  </div>
+
