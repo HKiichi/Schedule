@@ -6,18 +6,19 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import {routing} from "./app.routing";
-import {LoginComponent} from "./login/login.component";
+import {LoginComponent} from "./auth/login/login.component";
 import {HeaderComponent} from "./header.component";
 import {ScheduleService} from "./schedule/schedule.service";
-import {SignUpComponent} from "./signup/signup.component";
+import {SignUpComponent} from "./auth/signup/signup.component";
 import {AvailabilityComponent} from "./availability/availability.component";
 import {DropdownDirective} from "./dropdown.directive";
 import {ShiftComponent} from "./shift/shift.component";
-import {LoginService} from "./login/login.service";
-import {SignupService} from "./signup/signup.service";
+import {LoginService} from "./auth/login/login.service";
+import {SignupService} from "./auth/signup/signup.service";
 import {ShiftService} from "./shift/shift.service";
-import {LoggedInGuard} from "./login/login.logged-in-guard";
-import {ProfileService} from "./login/login.profile-service";
+import {LoggedInGuard} from "./auth/login/login.logged-in-guard";
+import {ProfileService} from "./auth/login/login.profile-service";
+import {AvailabilityService} from "./availability/availability.service";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,9 @@ import {ProfileService} from "./login/login.profile-service";
     SignupService,
     ShiftService,
     LoggedInGuard,
-    ProfileService
+    ProfileService,
+    ScheduleService,
+    AvailabilityService
   ],
   bootstrap: [AppComponent]
 })

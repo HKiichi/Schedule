@@ -12,17 +12,19 @@ export class ShiftService{
   constructor(private http:Http){}
 
   storesData(shifts)  {
-
-    let body = JSON.stringify(shifts);
+    console.log(shifts);
+    let shiftdata = JSON.stringify(shifts);
     let url = 'http://localhost:8080/shifts/'
     let headers = new Headers({
       'Content-Type': 'application/json'
     });
-    return this.http.post(url, body, {headers: headers})
+   this.http.post(url, shiftdata, {headers: headers})
       .subscribe(
         data => alert('Shift created!'),
         error => alert(error.json().message)
+
       );
+    console.log(shiftdata)
   }
 
 }

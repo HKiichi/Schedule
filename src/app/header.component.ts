@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
 import {ScheduleService} from "./schedule/schedule.service";
-import {SignupService} from "./signup/signup.service";
+import {SignupService} from "./auth/signup/signup.service";
 import {Http} from "@angular/http";
 import {Router} from "@angular/router";
-import {LoginService} from "./login/login.service";
+import {LoginService} from "./auth/login/login.service";
 /**
  * Created by iris on 24-11-16.
  */

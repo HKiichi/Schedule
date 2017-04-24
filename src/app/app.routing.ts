@@ -1,7 +1,7 @@
 import {Routes, RouterModule} from "@angular/router";
 import {ScheduleComponent} from "./schedule/schedule.component";
-import {LoginComponent} from "./login/login.component";
-import {SignUpComponent} from "./signup/signup.component";
+import {LoginComponent} from "./auth/login/login.component";
+import {SignUpComponent} from "./auth/signup/signup.component";
 import {AvailabilityComponent} from "./availability/availability.component";
 import {ShiftComponent} from "./shift/shift.component";
 

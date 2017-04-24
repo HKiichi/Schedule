@@ -1,7 +1,5 @@
-import {Headers, Http, Response} from "@angular/http";
+import {Headers, Http} from "@angular/http";
 import {Injectable} from "@angular/core";
-
-import {SignUpComponent} from "./signup.component";
 
 
 /**
@@ -12,16 +10,8 @@ import {SignUpComponent} from "./signup.component";
 export class SignupService {
 
 
- constructor(private http: Http/*, private person: Person*/
-            ){
-   // this.person= {
-   //   firstname: '',
-   //   lastname : '',
-   //   email: '',
-   //   username: '',
-   //  password: ''
-   // }
- }
+  constructor(private http: Http/*, private person: Person*/) {
+  }
 
 
   onSubmit(person) {
@@ -39,5 +29,6 @@ export class SignupService {
       );
     //this.signupComponent.goBack();
 
+ console.log(person);
   }
 }

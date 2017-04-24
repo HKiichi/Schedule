@@ -7,29 +7,50 @@
 <div class="container main">
   <div class="row">
     <div class="col-md-6">
-      <form method="post">
+      <!--<form method="post">-->
+
+      <form [formGroup]="transferForm" (ngSubmit)="submitAvailability(transferForm.value)">
         <div class="form-group" >
-          <label for="transferFrom">Please select the date From:</label>
-          <select class="form-control"  name="transferFrom" id="transferFrom" required="required">
-            <option  disabled="disabled" selected="selected"> -- select your account -- </option>
-            <option value="Primary">Date</option>
-            <option value="Savings">Date</option>
+          <label for="transferFrom">Please select the name:</label>
+          <select
+            name = "transferFrom"
+            type="text"
+            id="transferFrom"
+            class="form-control"
+            formControlName="name" required="required">
+            <option  disabled="disabled" selected="selected"> -- select your name -- </option>
+            <option *ngFor="let p of profile" [value]="p"> {{p}} </option>
           </select>
           <br />
         </div>
 
+
         <div class="form-group" >
-          <label for="transferTo">Please select your name </label>
-          <select class="form-control"  name="transferTo" id="transferTo" required="required">
-            <option  disabled="disabled" selected="selected"> -- select your account -- </option>
-            <option value="Primary">Primary</option>
-            <option value="Savings">Savings</option>
+          <label for="transferTo">Please select your date </label>
+          <select
+            name = "transferTo"
+            type="text"
+            id="transferTo"
+            class="form-control"
+            formControlName="date"
+            required="required">
+            <option  disabled="disabled" selected="selected"> -- select your date -- </option>
+            <option *ngFor="let s of shiftDate; let i = index" [ngValue]=shiftDate[i] >{{s.date}} </option>
           </select>
           <br />
         </div>
 
+      <!--  <div class="form-group">
+          <select
+            class="form-control"
+            formControlName="id"
+            required="required">
+           </select>
+          <option *ngFor="let i of shiftDate"; [value]="i.id"></option>
+        </div>
+-->
         <div class="form-group">
-          <input type="checkbox" name="available" id="available" />&nbsp;<span class="clean-font">Available</span>
+          <input type="checkbox" value="false" name="available" formControlName="available" />&nbsp;<span class="clean-font">Available</span>
         </div>
 
         <input type="hidden"
@@ -37,10 +58,11 @@
                value="${_csrf.token}"/>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-      </form>
+      <!--</form>-->
 
       <div class="col-md-6">
       </div>
+      </form>
     </div>
   </div>
 </div>

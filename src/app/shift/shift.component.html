@@ -1,7 +1,8 @@
-
+<app-header></app-header>
+<div class="container">
 <div class="row">
   <div class="col-xs-12">
-    <form [formGroup]= "shiftForm" (ngSubmit)="storesData()">
+    <form [formGroup]= "shiftForm" (ngSubmit)="storingData(shiftForm.value)">
 
 
       <div class="row">
@@ -20,12 +21,13 @@
       <div class="row">
         <div class="col-xs-12">
           <label for="time">Time</label>
-          <textarea
+          <input
             type="text"
+
             id="time"
             row="6"
             class="form-control"
-            formControlName="time"></textarea>
+            formControlName="time">
         </div>
       </div>
       <br>
@@ -37,6 +39,7 @@
       </div>
 
     </form>
+</div>
   </div>
   </div>
 
